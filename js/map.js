@@ -21,7 +21,7 @@ jQuery(function($) {
             });
 			
 			var marker = new google.maps.Marker({
-			  position: new google.maps.LatLng(60, 105),
+			  position: pos,
 			  map: map,
 			  title:"Current location"
 		  });
@@ -33,6 +33,14 @@ jQuery(function($) {
 			  fillColor: '#B9D8FF'
 			});
 			circle.bindTo('center', marker, 'position');
+			
+			var image = '/images/mystick.png';
+			var myLatLng = new google.maps.LatLng(-37.87675,145.046332);
+			var myStickMarker = new google.maps.Marker({
+				  position: myLatLng,
+				  map: map,
+				  icon: image
+			});
 
             map.setCenter(pos);
           }, function() {
