@@ -8,8 +8,11 @@
 <link href="jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css"/>
   <script src="js/vendor/phoneGap/cordova-1.6.0.js"></script>  
 <script src="jquery-1.6.4.min.js" type="text/javascript"></script>
-<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>  
 <script src="jquery.mobile-1.0.min.js" type="text/javascript"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+<script src="js/login.js" type="text/javascript"></script>
+<script src="js/map.js" type="text/javascript"></script>
+<script src="js/cal.js" type="text/javascript"></script>
 </head> 
 <body> 
 
@@ -229,22 +232,31 @@
 
 <div data-role="page" id="page2">
 	<div data-role="header">
-		<h1>Page Two</h1>
+		<h1><input type="button" onclick="history.go(-1);" value="back" />Page Two</h1>
 	</div>
-	<div data-role="content">	
-		Content		
+	<div data-role="content">
+		Email: <input type="text" id="email" />
+		Password: <input type="password" id="password" />
+		<input type="button" id="btnLogin" value="Login" />
 	</div>
 	<div data-role="footer">
-		<h4>Page Footer</h4>
+		<h4>
+		<div id="status">Status</div>
+		</h4>
 	</div>
 </div>
 
 <div data-role="page" id="page3">
 	<div data-role="header">
-		<h1>Page Three</h1>
+		<h1><input type="button" onclick="history.go(-1);" value="back" />Page Three</h1>
 	</div>
 	<div data-role="content">	
-		Content		
+		Meters <input type="text" id="meters" /> <input type="button" id="btnMeters" value="Ok" /><input type="button" id="btnPick" value="Pick" /><br />
+		<div id="res-meters">Calories: 0 Kcals - Speed: 0km/h</div>
+		Calories <input type="text" id="calories" /> <input type="button" id="btnCalories" value="Ok" /><br />
+		<div id="res-calories">Your meters: 0 m - Speed: 0km/h</div>
+		Speed <input type="text" id="speed" /> <input type="button" id="btnSpeed" value="Ok" />
+		<div id="res-speed">Calories: 0 Kcals - Your meters: 0 m</div>
 	</div>
 	<div data-role="footer">
 		<h4>Page Footer</h4>
@@ -253,13 +265,15 @@
 
 <div data-role="page" id="page4">
 	<div data-role="header">
-		<h1>Page Four</h1>
+		<h1><input type="button" onclick="history.go(-1);" value="back" />Page Four</h1>
 	</div>
 	<div data-role="content">	
-		Content		
+		<div id="map-canvas" style="height:300px;"></div>
 	</div>
 	<div data-role="footer">
-		<h4>Page Footer</h4>
+		<h4>
+		<div id="error"></div>
+		</h4>
 	</div>
 </div>
 
